@@ -1,0 +1,287 @@
+{
+  "dataBinding": {
+    "dataRoles": [
+      {
+        "name": "ActualValue",
+        "displayName": "Value",
+        "kind": "value",
+        "options": [
+          {
+            "displayName": "ValueFormat",
+            "type": "format",
+            "name": "valueFormat"
+          }
+        ]
+      },
+      {
+        "name": "Category",
+        "displayName": "Category",
+        "kind": "grouping"
+      },
+      {
+        "name": "Series",
+        "displayName": "Series",
+        "kind": "grouping"
+      }
+    ],
+    "dataViewMappings": [
+      {
+        "plain": {
+          "required": [
+            {
+              "ActualValue": {
+                "min": 1
+              },
+              "Category": {
+                "min": 1
+              },
+              "Series": {
+                "min": 1
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "ActualValue": {
+          "max": 1
+        },
+        "Category": {
+          "max": 1
+        },
+        "Series": {
+          "max": 1
+        }
+      }
+    ]
+  },
+  "options": {
+    "visual": [
+      {
+        "displayName": "CHART STYLE",
+        "properties": [
+          {
+            "name": "customPaletteColor",
+            "type": "Palette",
+            "displayName": "Palette",
+            "defaultValue": "#eb4b5c"
+          },
+          {
+            "displayName": "Animation Duration (ms)",
+            "name": "animationDuration",
+            "type": "Integer",
+            "defaultValue": 5000,
+            "min": 1000,
+            "step": 500
+          },
+          {
+            "displayName": "Line Thickness",
+            "name": "lineStyleWidth",
+            "type": "Integer",
+            "defaultValue": 1,
+            "min": 1,
+            "max": 5
+          },
+          {
+            "name": "showShadow",
+            "type": "Boolean",
+            "displayName": "Show Shadow",
+            "defaultValue": false
+          },
+          {
+            "name": "showSymbol",
+            "type": "Boolean",
+            "displayName": "Show Symbol",
+            "defaultValue": false
+          }
+        ]
+      },
+      {
+        "displayName": "Data Labels",
+        "properties": [
+          {
+            "name": "showValue",
+            "type": "Boolean",
+            "displayName": "Show Value",
+            "defaultValue": true
+          }
+        ]
+      },
+      {
+        "displayName": "Category Axis",
+        "properties": [
+          {
+            "name": "showCategoryAxis",
+            "type": "Boolean",
+            "displayName": "Show Axis",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisLine",
+            "type": "Boolean",
+            "displayName": "Show Axis Line",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisTickLabel",
+            "type": "Boolean",
+            "displayName": "Show Tick Label",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisTickMark",
+            "type": "Boolean",
+            "displayName": "Show Tick Mark",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisTitle",
+            "type": "Boolean",
+            "displayName": "Show Title",
+            "defaultValue": false
+          },
+          {
+            "name": "categoryAxisTextStyle",
+            "type": "TextStyle",
+            "displayName": "Text Style",
+            "inheritFrom": "dashboard.textStyle"
+          }
+        ]
+      },
+      {
+        "displayName": "Value Axis",
+        "properties": [
+          {
+            "name": "showValueAxis",
+            "type": "Boolean",
+            "displayName": "Show Axis",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisGridline",
+            "type": "Boolean",
+            "displayName": "Show Grid Lines",
+            "defaultValue": false
+          },
+          {
+            "name": "valueAxisGridlineColor",
+            "type": "Color",
+            "displayName": "Grid Lines Color",
+            "defaultValue": "#cccccc",
+            "resetType": "None"
+          },
+          {
+            "name": "valueAxisLine",
+            "type": "Boolean",
+            "displayName": "Show Axis Line",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisTickLabel",
+            "type": "Boolean",
+            "displayName": "Show Tick Label",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisTickMark",
+            "type": "Boolean",
+            "displayName": "Show Tick Mark",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisTitle",
+            "type": "Boolean",
+            "displayName": "Show Title",
+            "defaultValue": false
+          },
+          {
+            "name": "valueAxisTextStyle",
+            "type": "TextStyle",
+            "displayName": "Text Style",
+            "inheritFrom": "dashboard.textStyle"
+          }
+        ]
+      },
+      {
+        "displayName": "Legend",
+        "properties": [
+          {
+            "name": "customShowLegend",
+            "type": "Boolean",
+            "displayName": "Show Legend",
+            "defaultValue": "true"
+          },
+          {
+            "name": "legendFontSize",
+            "type": "Integer",
+            "displayName": "Font Size",
+            "defaultValue": 14
+          },
+          {
+            "name": "legendHorizontalPosition",
+            "type": "Enum",
+            "displayName": "Horizontal Position",
+            "items": [
+              {
+                "value": "left",
+                "displayName": "Left"
+              },
+              {
+                "value": "center",
+                "displayName": "Center"
+              },
+              {
+                "value": "right",
+                "displayName": "Right"
+              }
+            ],
+            "defaultValue": "left"
+          },
+          {
+            "name": "legendVerticalPosition",
+            "type": "Enum",
+            "displayName": "Vertical Position",
+            "items": [
+              {
+                "value": "top",
+                "displayName": "Top"
+              },
+              {
+                "value": "middle",
+                "displayName": "Middle"
+              },
+              {
+                "value": "bottom",
+                "displayName": "Bottom"
+              }
+            ],
+            "defaultValue": "top"
+          }
+        ]
+      },
+      {
+        "type": "title"
+      },
+      {
+        "type": "appearance"
+      },
+      {
+        "type": "interaction"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "annotation"
+    },
+    {
+      "type": "filter"
+    },
+    {
+      "type": "focus"
+    }
+  ],
+  "analysis": []
+}

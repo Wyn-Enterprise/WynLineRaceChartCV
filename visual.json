@@ -1,0 +1,17 @@
+{
+    "id": "8a979840-1ff6-11ed-a33e-51e1261eb6b8",
+    "name": "LineRaceChart",
+    "displayName": "LineRace Chart",
+    "displayNameKey": "",
+    "icon": "visualIcon",
+    "description": "",
+    "externalJs": [],
+    "externalCss": [],
+    "assets": {
+        "images": {
+            "visualIcon": "assets/icon.png"
+        }
+    },
+    "configuration": {},
+    "cliVersion": "5.0.1"
+}
