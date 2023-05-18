@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-      "baseUrl": "./",
-      "sourceMap": true,
-      "module": "commonjs",
-      "target": "ES5",
-      "esModuleInterop": true,
-      "resolveJsonModule": true,
-      "lib": [
-        "esnext",
-        "dom"
-      ]
-    },
+  "compilerOptions": {
+    "baseUrl": "./",
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "ES5",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
     "include": [
       "./src", "./visual.d.ts"
     ],
