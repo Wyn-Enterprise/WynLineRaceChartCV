@@ -1,15 +1,17 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const config = {
   entry: './src/visual.ts',
   output: {
     filename: 'visual.js',
     path: path.join(__dirname, 'dist'),
-    library: 'WynVisualClass',
-    libraryTarget: 'umd',
+    library: {
+      name: 'WynVisualClass',
+      type: 'umd',
+    },
     libraryExport: 'default'
   },
   plugins: [
@@ -18,14 +20,14 @@ const config = {
     }),
   ],
   optimization: {
-    minimizer: [new OptimizeCSSAssetsPlugin({}), new UglifyJsPlugin()],
+    minimizer: [new CssMinimizerPlugin({}), new TerserPlugin()],
   },
   module: {
     rules: [
       {
         test: /\.(ts)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'awesome-typescript-loader?silent=true'],
+        use: ['babel-loader', 'ts-loader'],
       },
       {
         test: /\.less|.css$/,
@@ -33,11 +35,7 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader'
-          },
-        ],
+        type: 'asset/inline',
       },
     ],
     unknownContextCritical: false,
